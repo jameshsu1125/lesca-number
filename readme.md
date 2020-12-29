@@ -3,21 +3,26 @@
 # Installation
 
 ```sh
-$ npm install <package> --save
+$ npm install lesca-number --save
 ```
 
 # Usage
 
 ```javascript
-import foo from 'foo';
+import { Pad, Uid } from 'lesca-number';
+
+for (var i = 0; i < 100; i++) {
+	let img_url = `./${Pad(i, 4)}.png`;
+	console.log(img_url); // => 0001.png ~ 0100.png
+}
+
+console.log(Uid(10)); // => c38c995b8d (random)
 ```
 
 # Methods
 
-| method | options | description | default |
-| :----- | :-----: | :---------: | ------: |
-
-# Properties
-
-| Properties | type | description | default |
-| :--------- | :--: | :---------: | ------: |
+| method        | options |     description      | default |
+| :------------ | :-----: | :------------------: | ------: |
+| Pad(num, max) |   num   | the index of numbers |         |
+|               |   max   |  length of numbers   |       4 |
+| Uid(len)      |   len   |  length of numbers   |      10 |
