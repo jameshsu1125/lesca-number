@@ -12,4 +12,8 @@ module.exports = {
 		}
 		return t;
 	},
+
+	Dollar(Num) {
+		return Num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+	},
 };
