@@ -1,2 +1,2 @@
-import { Pad, Uid } from './number';
-export { Pad, Uid };
+import { Pad, Uid, Dollar } from './number';
+export { Pad, Uid, Dollar };
