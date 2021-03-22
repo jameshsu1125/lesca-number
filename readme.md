@@ -26,3 +26,4 @@ console.log(Uid(10)); // => c38c995b8d (random)
 | Pad(num, max) |   num   | the index of numbers |         |
 |               |   max   |  length of numbers   |       4 |
 | Uid(len)      |   len   |  length of numbers   |      10 |
+| Dollar(num)   |   num   | 1130200 => 1,130,200 |         |
