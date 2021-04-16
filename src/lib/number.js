@@ -16,4 +16,8 @@ module.exports = {
 	Dollar(Num) {
 		return Num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 	},
+
+	ScrollTop() {
+		if (window) window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+	},
 };
