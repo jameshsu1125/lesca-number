@@ -18,17 +18,16 @@ module.exports = {
 	},
 
 	ScrollTop() {
-		if (window) window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+		if (window) return window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
 	},
 
 	Position(element) {
-		let x = 0;
-		let y = 0;
-		while (element) {
-			x += element.offsetLeft - element.scrollLeft + element.clientLeft;
-			y += element.offsetTop - element.scrollTop + element.clientTop;
-			element = element.offsetParent;
+		if (window) {
+			var rect = element.getBoundingClientRect();
+			return {
+				top: rect.top + window.scrollY,
+				left: rect.left + window.scrollX,
+			};
 		}
-		return { top: x, left: y };
 	},
 };

@@ -1,2 +1,2 @@
-import { Pad, Uid, Dollar, ScrollTop } from './number';
-export { Pad, Uid, Dollar, ScrollTop };
+import { Pad, Uid, Dollar, ScrollTop, Position } from './number';
+export { Pad, Uid, Dollar, ScrollTop, Position };
