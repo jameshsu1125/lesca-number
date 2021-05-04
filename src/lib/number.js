@@ -23,7 +23,7 @@ module.exports = {
 
 	Position(element) {
 		if (window) {
-			var rect = element.getBoundingClientRect();
+			var rect = element?.getBoundingClientRect();
 			return {
 				top: rect.top + window.scrollY,
 				left: rect.left + window.scrollX,
