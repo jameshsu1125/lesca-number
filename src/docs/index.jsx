@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Pad, Uid, ScrollTop, Position } from './../lib/index';
+import { Pad, Uid, ScrollTop, Position, CoverFit } from './../lib/index';
 
 import './styles.css';
 
@@ -14,6 +14,9 @@ setTimeout(() => {
 	const target = document.getElementById('div2');
 	console.log(Position(target));
 }, 1000);
+
+const a = CoverFit();
+console.log(a);
 
 function Demo() {
 	return (

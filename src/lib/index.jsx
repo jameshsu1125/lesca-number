@@ -55,5 +55,30 @@ const Position = (ele) => {
 	}
 };
 
-export default { Pad, Uid, Dollar, ScrollTop, Position };
-export { Pad, Uid, Dollar, ScrollTop, Position };
+const CoverFit = (imageSize = {width:1280, height:720}, containerSize = { width:window.innerWidth, height:window.innerHeight})=>{
+	const { width:iw, height:ih } = imageSize;
+	const { width:cw, height:ch } = containerSize;
+	const ir = ih / iw;
+	const cr = ch / cw;
+	const result = {}
+	if(cr > ir)
+	{
+		// height 
+		result.width = ch / ir;
+		result.height = ch;
+		result.left = (cw - iw) * .5;
+		result.top = 0;
+	}
+	else
+	{
+		// width
+		result.width = cw;
+		result.height = cw * ir;
+		result.left = 0;
+		result.top = (ch - ih) * .5;
+	}
+	return result;
+}
+
+export default { Pad, Uid, Dollar, ScrollTop, Position,CoverFit };
+export { Pad, Uid, Dollar, ScrollTop, Position, CoverFit };
