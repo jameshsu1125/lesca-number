@@ -1,10 +1,10 @@
-export declare type ClientRect = {
+export type ClientRect = {
     width: number;
     height: number;
     top: number;
     left: number;
 };
-export declare type Size = {
+export type Size = {
     width: number;
     height: number;
 };

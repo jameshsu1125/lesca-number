@@ -87,6 +87,18 @@ const CoverSize = (
   return result;
 };
 
-const Mise = { Pad, Uid, Dollar, ScrollTop, Position, CoverSize };
+export const validateEmail = (email: string) => {
+  return String(email)
+    .toLowerCase()
+    .match(
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+    );
+};
+
+export const validatePhone = (phone: string) => {
+  return phone !== '' && phone.length === 10 && phone.slice(0, 2) === '09';
+};
+
+const Mise = { Pad, Uid, Dollar, ScrollTop, Position, CoverSize, validateEmail };
 export default Mise;
 export { Pad, Uid, Dollar, ScrollTop, Position, CoverSize };

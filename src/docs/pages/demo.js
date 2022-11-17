@@ -1,6 +1,6 @@
 import { Box, Button, ButtonGroup, TextField } from '@mui/material';
-import { useEffect, useState } from 'react';
-import { CoverSize, Dollar, Pad, Uid } from '../../lib';
+import { useCallback, useState } from 'react';
+import { CoverSize, Dollar, Pad, Uid, validateEmail, validatePhone } from '../../lib';
 
 console.log(Dollar(93848421100));
 const Demo = () => {
@@ -14,7 +14,24 @@ const Demo = () => {
   const [containerWidth, setContainerWidth] = useState(1000);
   const [containerHeight, setContainerHeight] = useState(1000);
 
-  useEffect(() => {}, []);
+  const [email, setEmail] = useState('');
+  const checkEmail = useCallback(() => {
+    if (validateEmail(email)) {
+      alert('ok');
+    } else {
+      alert('error format');
+    }
+  }, [email]);
+
+  const [phone, setPhone] = useState('');
+  const checkPhone = useCallback(() => {
+    if (validatePhone(phone)) {
+      alert('ok');
+    } else {
+      alert('error format');
+    }
+  }, [phone]);
+
   return (
     <div className='Demo' style={{ paddingBottom: '30px' }}>
       <h2>Demo</h2>
@@ -137,6 +154,44 @@ const Demo = () => {
           calculator
         </Button>
       </ButtonGroup>
+
+      <div>
+        <h4>phone and email check</h4>
+        <Box sx={{ marginTop: '10px' }}>
+          <TextField
+            required
+            id='outlined-required'
+            label='email'
+            type='email'
+            fullWidth
+            onChange={(e) => {
+              const { value } = e.target;
+              setEmail(value);
+            }}
+          />
+
+          <ButtonGroup variant='contained'>
+            <Button onClick={checkEmail}>check email format</Button>
+          </ButtonGroup>
+        </Box>
+        <Box sx={{ marginTop: '10px' }}>
+          <TextField
+            required
+            id='outlined-required'
+            label='phone'
+            type='number'
+            fullWidth
+            onChange={(e) => {
+              const { value } = e.target;
+              setPhone(value);
+            }}
+          />
+
+          <ButtonGroup variant='contained'>
+            <Button onClick={checkPhone}>check email format</Button>
+          </ButtonGroup>
+        </Box>
+      </div>
     </div>
   );
 };

@@ -39,6 +39,8 @@ declare const Position: (ele: HTMLElement) => {
  * @returns
  */
 declare const CoverSize: (imageSize?: Size, containerSize?: Size) => ClientRect;
+export declare const validateEmail: (email: string) => RegExpMatchArray | null;
+export declare const validatePhone: (phone: string) => boolean;
 declare const Mise: {
     Pad: (num: string | number, len?: number) => string;
     Uid: (len?: number) => string;
@@ -49,6 +51,7 @@ declare const Mise: {
         left: number;
     } | undefined;
     CoverSize: (imageSize?: Size, containerSize?: Size) => ClientRect;
+    validateEmail: (email: string) => RegExpMatchArray | null;
 };
 export default Mise;
 export { Pad, Uid, Dollar, ScrollTop, Position, CoverSize };
