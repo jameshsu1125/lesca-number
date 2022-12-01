@@ -5,30 +5,30 @@ import { ClientRect, Size } from './type';
  * @param {*} len
  * @returns
  */
-declare const Pad: (num: string | number, len?: number) => string;
+export declare const Pad: (num: string | number, len?: number) => string;
 /**
  * random id generator
  * @param {number} len id length
  * @returns random string
  */
-declare const Uid: (len?: number) => string;
+export declare const Uid: (len?: number) => string;
 /**
  * number to dollar. ( 1000 => 1,000 )
  * @param {number | string} Num
  * @returns dollar string
  */
-declare const Dollar: (Num: number | string) => string;
+export declare const Dollar: (Num: number | string) => string;
 /**
  * get current scrolltop for any browswer
  * @returns scrolltop
  */
-declare const ScrollTop: () => number | undefined;
+export declare const ScrollTop: () => number | undefined;
 /**
  * get client position of element
  * @param {HTMLElement} ele
  * @returns top and left object
  */
-declare const Position: (ele: HTMLElement) => {
+export declare const Position: (ele: HTMLElement) => {
     top: number;
     left: number;
 } | undefined;
@@ -38,9 +38,10 @@ declare const Position: (ele: HTMLElement) => {
  * @param containerSize
  * @returns
  */
-declare const CoverSize: (imageSize?: Size, containerSize?: Size) => ClientRect;
-export declare const validateEmail: (email: string) => RegExpMatchArray | null;
-export declare const validatePhone: (phone: string) => boolean;
+export declare const CoverSize: (imageSize?: Size, containerSize?: Size) => ClientRect;
+export declare const ValidateEmail: (email: string) => RegExpMatchArray | null;
+export declare const ValidatePhone: (phone: string) => boolean;
+export declare const ValidateURL: (str: string) => boolean;
 declare const Mise: {
     Pad: (num: string | number, len?: number) => string;
     Uid: (len?: number) => string;
@@ -51,7 +52,8 @@ declare const Mise: {
         left: number;
     } | undefined;
     CoverSize: (imageSize?: Size, containerSize?: Size) => ClientRect;
-    validateEmail: (email: string) => RegExpMatchArray | null;
+    ValidateEmail: (email: string) => RegExpMatchArray | null;
+    ValidatePhone: (phone: string) => boolean;
+    ValidateURL: (str: string) => boolean;
 };
 export default Mise;
-export { Pad, Uid, Dollar, ScrollTop, Position, CoverSize };

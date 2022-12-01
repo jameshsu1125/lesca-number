@@ -1,6 +1,6 @@
 import { Box, Button, ButtonGroup, TextField } from '@mui/material';
 import { useCallback, useState } from 'react';
-import { CoverSize, Dollar, Pad, Uid, validateEmail, validatePhone } from '../../lib';
+import { CoverSize, Dollar, Pad, Uid, ValidateEmail, ValidatePhone, ValidateURL } from '../../lib';
 
 console.log(Dollar(93848421100));
 const Demo = () => {
@@ -16,7 +16,7 @@ const Demo = () => {
 
   const [email, setEmail] = useState('');
   const checkEmail = useCallback(() => {
-    if (validateEmail(email)) {
+    if (ValidateEmail(email)) {
       alert('ok');
     } else {
       alert('error format');
@@ -25,12 +25,21 @@ const Demo = () => {
 
   const [phone, setPhone] = useState('');
   const checkPhone = useCallback(() => {
-    if (validatePhone(phone)) {
+    if (ValidatePhone(phone)) {
       alert('ok');
     } else {
       alert('error format');
     }
   }, [phone]);
+
+  const [url, setUrl] = useState('');
+  const checkURL = useCallback(() => {
+    if (ValidateURL(url)) {
+      alert('ok');
+    } else {
+      alert('error format');
+    }
+  }, [url]);
 
   return (
     <div className='Demo' style={{ paddingBottom: '30px' }}>
@@ -189,6 +198,24 @@ const Demo = () => {
 
           <ButtonGroup variant='contained'>
             <Button onClick={checkPhone}>check email format</Button>
+          </ButtonGroup>
+        </Box>
+
+        <Box sx={{ marginTop: '10px' }}>
+          <TextField
+            required
+            id='outlined-required'
+            label='URL'
+            type='string'
+            fullWidth
+            onChange={(e) => {
+              const { value } = e.target;
+              setUrl(value);
+            }}
+          />
+
+          <ButtonGroup variant='contained'>
+            <Button onClick={checkURL}>check url format</Button>
           </ButtonGroup>
         </Box>
       </div>

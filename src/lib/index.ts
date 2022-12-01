@@ -6,7 +6,7 @@ import { ClientRect, Size } from './type';
  * @param {*} len
  * @returns
  */
-const Pad = (num: string | number, len: number = 4) => {
+export const Pad = (num: string | number, len: number = 4) => {
   var s = '';
   for (var i = 0; i < len; i++) s += '0';
   return String(s + num).slice(len * -1);
@@ -17,7 +17,7 @@ const Pad = (num: string | number, len: number = 4) => {
  * @param {number} len id length
  * @returns random string
  */
-const Uid = (len: number = 10) => {
+export const Uid = (len: number = 10) => {
   var t = '';
   for (var i = 0; i < len; i++) {
     t += (((1 + Math.random()) * 0x10) | 0).toString(16).substring(1);
@@ -30,7 +30,7 @@ const Uid = (len: number = 10) => {
  * @param {number | string} Num
  * @returns dollar string
  */
-const Dollar = (Num: number | string) => {
+export const Dollar = (Num: number | string) => {
   return Num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 };
 
@@ -38,7 +38,7 @@ const Dollar = (Num: number | string) => {
  * get current scrolltop for any browswer
  * @returns scrolltop
  */
-const ScrollTop = () => {
+export const ScrollTop = () => {
   if (window)
     return window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
 };
@@ -48,7 +48,7 @@ const ScrollTop = () => {
  * @param {HTMLElement} ele
  * @returns top and left object
  */
-const Position = (ele: HTMLElement) => {
+export const Position = (ele: HTMLElement) => {
   if (window) {
     var rect = ele?.getBoundingClientRect();
     return {
@@ -64,7 +64,7 @@ const Position = (ele: HTMLElement) => {
  * @param containerSize
  * @returns
  */
-const CoverSize = (
+export const CoverSize = (
   imageSize: Size = { width: 1280, height: 720 },
   containerSize: Size = { width: window.innerWidth, height: window.innerHeight },
 ) => {
@@ -87,7 +87,7 @@ const CoverSize = (
   return result;
 };
 
-export const validateEmail = (email: string) => {
+export const ValidateEmail = (email: string) => {
   return String(email)
     .toLowerCase()
     .match(
@@ -95,10 +95,33 @@ export const validateEmail = (email: string) => {
     );
 };
 
-export const validatePhone = (phone: string) => {
+export const ValidatePhone = (phone: string) => {
   return phone !== '' && phone.length === 10 && phone.slice(0, 2) === '09';
 };
 
-const Mise = { Pad, Uid, Dollar, ScrollTop, Position, CoverSize, validateEmail };
+export const ValidateURL = (str: string) => {
+  var pattern = new RegExp(
+    '^(https?:\\/\\/)?' +
+      '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' +
+      '((\\d{1,3}\\.){3}\\d{1,3}))' +
+      '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' +
+      '(\\?[;&a-z\\d%_.~+=-]*)?' +
+      '(\\#[-a-z\\d_]*)?$',
+    'i',
+  );
+  return !!pattern.test(str);
+};
+
+const Mise = {
+  Pad,
+  Uid,
+  Dollar,
+  ScrollTop,
+  Position,
+  CoverSize,
+  ValidateEmail,
+  ValidatePhone,
+  ValidateURL,
+};
+
 export default Mise;
-export { Pad, Uid, Dollar, ScrollTop, Position, CoverSize };
