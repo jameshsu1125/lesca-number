@@ -1,6 +1,6 @@
 {
   "name": "lesca-number",
-  "version": "1.5.4",
+  "version": "1.5.5",
   "description": "some useful js",
   "main": "lib/index.js",
   "scripts": {
@@ -26,6 +26,7 @@
     "@babel/preset-env": "^7.23.2",
     "@babel/preset-react": "^7.22.15",
     "@babel/preset-typescript": "^7.23.2",
+    "@babel/runtime": "^7.23.2",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.14.13",
@@ -53,8 +54,5 @@
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1"
   },
-  "author": "jamehsu1125 <jameshsu1125@gmail.com>",
-  "dependencies": {
-    "@babel/runtime": "^7.23.2"
-  }
+  "author": "jamehsu1125 <jameshsu1125@gmail.com>"
 }
