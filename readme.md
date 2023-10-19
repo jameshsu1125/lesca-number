@@ -29,9 +29,6 @@ import {
   Uid,
   Dollar,
   CoverSize,
-  ValidateEmail,
-  ValidatePhone,
-  ValidateURL,
 } from 'lesca-number';
 
 for (var i = 0; i < 100; i++) {
@@ -42,9 +39,6 @@ for (var i = 0; i < 100; i++) {
 console.log(Uid(10)); // => c38c995b8d (random)
 console.log(Dollar(93848421100)); // => 93,848,421,100
 console.log(CoverSize({ width: 720, height: 420 }, { width: 1000, height: 1000 }));
-console.log(ValidateEmail('james@gmail.com')); // true
-console.log(ValidatePhone('0912345678')); // true
-console.log(ValidateURL('https://google.com')); // true
 ```
 
 ## Development
@@ -55,9 +49,6 @@ console.log(ValidateURL('https://google.com')); // true
 | .**Uid**(**len**:_int_):_string_                                            |          length of numbers           |      10 |
 | .**Dollar**(**num**:_int_):_string_                                         |         1130200 => 1,130,200         |         |
 | .**CoverSize**(**imageSize**:_object_, **containerSize**:_object_):_object_ |        calculator cover size         |         |
-| .**ValidateEmail**(**email**:_string_):_boolean_                            |          check email format          |         |
-| .**ValidatePhone**(**phone**:_string_):_boolean_                            | check **Taiwan** phone number format |         |
-| .**ValidateURL**(**url**:_string_):_boolean_                                |           check url format           |         |
 
 ### Features
 
