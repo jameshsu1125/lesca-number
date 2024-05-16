@@ -79,7 +79,7 @@ export const CoverSize = (
   if (cr > ir) {
     result.width = ch / ir;
     result.height = ch;
-    result.left = (result.width - cw) * 0.5;
+    result.left = (cw - result.width) * 0.5;
     result.top = 0;
     console.log(cw, iw);
   } else {
