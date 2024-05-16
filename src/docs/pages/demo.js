@@ -9,10 +9,10 @@ const Demo = () => {
   const [dollar, setDollar] = useState(0);
   const [size, setSize] = useState({ width: null, heigh: null, top: null, left: null });
 
-  const [imageWidth, setImageWidth] = useState(720);
-  const [imageHeight, setImageHeight] = useState(480);
-  const [containerWidth, setContainerWidth] = useState(1000);
-  const [containerHeight, setContainerHeight] = useState(1000);
+  const [imageWidth, setImageWidth] = useState(1920);
+  const [imageHeight, setImageHeight] = useState(1423);
+  const [containerWidth, setContainerWidth] = useState(1349);
+  const [containerHeight, setContainerHeight] = useState(500);
 
   const [email, setEmail] = useState('');
   const checkEmail = useCallback(() => {

@@ -70,19 +70,23 @@ export const CoverSize = (
 ) => {
   const { width: iw, height: ih } = imageSize;
   const { width: cw, height: ch } = containerSize;
+
   const ir = ih / iw;
   const cr = ch / cw;
   const result: ClientRect = { width: 0, height: 0, left: 0, top: 0 };
+  console.log(cr, ir);
+
   if (cr > ir) {
     result.width = ch / ir;
     result.height = ch;
-    result.left = (cw - iw) * 0.5;
+    result.left = (result.width - cw) * 0.5;
     result.top = 0;
+    console.log(cw, iw);
   } else {
     result.width = cw;
     result.height = cw * ir;
     result.left = 0;
-    result.top = (ch - ih) * 0.5;
+    result.top = (ch - result.height) * 0.5;
   }
   return result;
 };
