@@ -74,7 +74,6 @@ export const CoverSize = (
   const ir = ih / iw;
   const cr = ch / cw;
   const result: ClientRect = { width: 0, height: 0, left: 0, top: 0 };
-  console.log(cr, ir);
 
   if (cr > ir) {
     result.width = ch / ir;
