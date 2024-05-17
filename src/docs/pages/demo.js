@@ -1,6 +1,6 @@
 import { Box, Button, ButtonGroup, TextField } from '@mui/material';
 import { useCallback, useState } from 'react';
-import { CoverSize, Dollar, Pad, Uid, ValidateEmail, ValidatePhone, ValidateURL } from '../../lib';
+import { CoverSize, Dollar, Pad, Uid } from '../../lib';
 
 console.log(Dollar(93848421100));
 const Demo = () => {

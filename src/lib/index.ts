@@ -80,7 +80,6 @@ export const CoverSize = (
     result.height = ch;
     result.left = (cw - result.width) * 0.5;
     result.top = 0;
-    console.log(cw, iw);
   } else {
     result.width = cw;
     result.height = cw * ir;
